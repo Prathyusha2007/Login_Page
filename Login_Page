@@ -1,0 +1,41 @@
+from tkinter import *
+
+root=Tk()
+
+
+def submit():
+  password_show = f("Your password is: {password.get()}")
+  username_show = f("Your username is: {username.get()}")
+  
+  label_password=Label(text=Password_show)
+  label_password.config(font=("Berlin Sans FB",32))
+  
+  label_username=Label(text=username_show)
+  label_username.config(font=("Berlin Sans FB",32))
+
+l1=Label(root,text="Welcome to the Login Application")
+l1.config(font=("Berlin Sans FB",32))
+
+l2=Label(root,text="Username: ")
+l2.config(font=("Berlin Sans FB",22))
+
+l3=Label(root,text="Password: ")
+l3.config(font=("Berlin Sans FB",22))
+
+
+username=StringVar()
+password=StringVar()
+e1=Entry(root, textvariable=StringVar())
+e2=Entry(root,textvariable=StringVar(),show="*")
+
+login_btn=Button(root,text="Submit",fg="Pink",bg="Blue",height=2,command=submit)
+
+l2.grid(row=0,column=0)
+e1.grid(row=1,coloumn=1)
+
+l3.grid(row=1,coloumn=0)
+e2.grid(row=1,coloumn=1)
+
+login_btn.grid(row=4,coloumn=4)
+
+root.mainloop()
